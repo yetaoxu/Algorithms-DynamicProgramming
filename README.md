@@ -14,6 +14,22 @@
 
 代码以斐波那契数列为例。
 
+对比递归：
+
+斐波那契数列使用递归方法实现：
+```
+int fib(int n)
+{
+    if(n <= 0)
+        return 0;
+    if(n == 1)
+        return 1;
+    return fib(n - 1) + fib(n - 2);
+}
+```
+由于调用每一个函数的时候都要保留上下文，所以空间上开销也不小。这么多的子节点被重复执行，如果在执行的时候把执行过的子节点保存起来，后面要用到的时候直接查表调用的话可以节约大量的时间。
+
+
 参考：https://baijiahao.baidu.com/s?id=1635388976060265522&wfr=spider&for=pc
     https://blog.csdn.net/u013309870/article/details/75193592
     https://blog.csdn.net/xxx823952375/article/details/26341385
